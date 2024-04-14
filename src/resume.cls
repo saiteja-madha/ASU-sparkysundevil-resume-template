@@ -65,6 +65,8 @@
     \endgroup
 }%
 
+\newcommand{\printPhone}[1]{\href{tel:#1}{#1}}%
+
 \newkeycommand{\introduction}[
     fullname,
     email,
@@ -77,7 +79,7 @@
         {%
             \expandafter\ifstrequal\expandafter{phone}{}{}% Contact number
             {%
-                \ifcommandkey{phone}{\commandkey{phone}}{}%
+                \ifcommandkey{phone}{\printPhone{\commandkey{phone}}}{}%
                 \expandafter\ifstrequal\expandafter{email}{}%
                 {%
                     \expandafter\ifstrequal\expandafter{linkedin}{}%
