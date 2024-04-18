@@ -39,6 +39,7 @@
 
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}%
 \newcommand{\profilelink}[1]{\href{https://#1}{#1}}%
+\newcommand{\phonelink}[1]{\href{tel:#1}{#1}}%
 
 \newcommand{\isA}[1]{
     \expandafter\ifstrequal\expandafter{#1}{default}{}{a}
@@ -65,8 +66,6 @@
     \endgroup
 }%
 
-\newcommand{\printPhone}[1]{\href{tel:#1}{#1}}%
-
 \newkeycommand{\introduction}[
     fullname,
     email,
@@ -79,7 +78,7 @@
         {%
             \expandafter\ifstrequal\expandafter{phone}{}{}% Contact number
             {%
-                \ifcommandkey{phone}{\printPhone{\commandkey{phone}}}{}%
+                \ifcommandkey{phone}{\phonelink{\commandkey{phone}}}{}
                 \expandafter\ifstrequal\expandafter{email}{}%
                 {%
                     \expandafter\ifstrequal\expandafter{linkedin}{}%
